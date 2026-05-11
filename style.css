@@ -476,67 +476,12 @@ footer {
   color: #cbd5e1;
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-18px); }
-}
-
-@media (max-width: 900px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero h1 {
-    font-size: 46px;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .cards,
-  .stats-section {
-    grid-template-columns: 1fr;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .menu {
-    position: absolute;
-    top: 75px;
-    right: 8%;
-    background: white;
-    flex-direction: column;
-    padding: 25px;
-    border-radius: 18px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-    display: none;
-  }
-
-  .menu.active {
-    display: flex;
-  }
-
-  .dark-mode .menu {
-    background: #111827;
-  }
-
-  .featured-box {
-    padding: 35px;
-  }
-
-  .featured-box h3 {
-    font-size: 30px;
-  }
-  .chatbot {
+/* CHATBOT */
+.chatbot {
   position: fixed;
   right: 25px;
   bottom: 90px;
-  z-index: 999;
+  z-index: 99999;
 }
 
 .chatbot-toggle {
@@ -655,4 +600,66 @@ footer {
   background: #111827;
   color: white;
 }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 46px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cards,
+  .stats-section {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu {
+    position: absolute;
+    top: 75px;
+    right: 8%;
+    background: white;
+    flex-direction: column;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    display: none;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .dark-mode .menu {
+    background: #111827;
+  }
+
+  .featured-box {
+    padding: 35px;
+  }
+
+  .featured-box h3 {
+    font-size: 30px;
+  }
+
+  .chatbot-box {
+    width: 310px;
+    right: -10px;
+  }
 }
