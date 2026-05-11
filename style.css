@@ -15,18 +15,28 @@ body {
   transition: 0.3s;
 }
 
+#progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0%;
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  z-index: 10000;
+}
+
 .navbar {
   position: sticky;
   top: 0;
   z-index: 100;
   height: 75px;
   padding: 0 8%;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255,255,255,0.9);
   backdrop-filter: blur(15px);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 5px 25px rgba(0,0,0,0.08);
 }
 
 .logo {
@@ -38,13 +48,13 @@ body {
 .menu {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 22px;
   list-style: none;
 }
 
 .menu a {
-  text-decoration: none;
   color: #1f2937;
+  text-decoration: none;
   font-weight: bold;
 }
 
@@ -76,11 +86,11 @@ body {
   gap: 50px;
   background: linear-gradient(135deg, #0f172a, #1e3a8a, #7c3aed);
   color: white;
+  overflow: hidden;
 }
 
 .hero-content {
   max-width: 700px;
-  animation: slideUp 1s ease;
 }
 
 .small-text {
@@ -119,6 +129,7 @@ body {
   border-radius: 40px;
   text-decoration: none;
   font-weight: bold;
+  transition: 0.3s;
 }
 
 .primary-btn {
@@ -131,14 +142,19 @@ body {
   color: white;
 }
 
+.primary-btn:hover,
+.secondary-btn:hover {
+  transform: translateY(-4px);
+}
+
 .profile-card {
   width: 280px;
   padding: 35px;
   text-align: center;
   border-radius: 30px;
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(255,255,255,0.14);
   backdrop-filter: blur(20px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
   animation: float 3s infinite ease-in-out;
 }
 
@@ -166,13 +182,18 @@ body {
   margin-bottom: 40px;
 }
 
+.about-box,
+.card,
+.timeline-item {
+  background: white;
+  border-radius: 25px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
 .about-box {
   max-width: 900px;
   margin: auto;
-  background: white;
   padding: 45px;
-  border-radius: 25px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
 }
 
 .about-box p {
@@ -189,15 +210,14 @@ body {
 }
 
 .card {
-  background: white;
   padding: 30px;
-  border-radius: 24px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
   transition: 0.3s;
+  position: relative;
+  overflow: hidden;
 }
 
 .card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-10px) scale(1.02);
 }
 
 .card h3 {
@@ -219,7 +239,6 @@ body {
 }
 
 .tag {
-  display: inline-block;
   background: #dbeafe;
   color: #2563eb;
   padding: 7px 14px;
@@ -231,6 +250,60 @@ body {
 .date {
   font-size: 14px;
   margin-bottom: 10px;
+}
+
+.featured-box {
+  max-width: 950px;
+  margin: auto;
+  padding: 55px;
+  border-radius: 30px;
+  color: white;
+  background: linear-gradient(135deg, #1e3a8a, #7c3aed);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.18);
+}
+
+.featured-box h3 {
+  font-size: 38px;
+  margin: 18px 0;
+}
+
+.featured-box p {
+  max-width: 700px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #e0e7ff;
+}
+
+.featured-box a {
+  display: inline-block;
+  margin-top: 20px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.stats-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  text-align: center;
+}
+
+.stat-card {
+  background: white;
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.stat-card h3 {
+  font-size: 46px;
+  color: #2563eb;
+}
+
+.stat-card p {
+  color: #64748b;
+  font-weight: bold;
 }
 
 .skills {
@@ -261,9 +334,43 @@ body {
   border-radius: 20px;
 }
 
+.faq-section {
+  max-width: 900px;
+  margin: auto;
+}
+
+.faq-item {
+  margin-bottom: 16px;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 20px;
+  border: none;
+  border-radius: 16px;
+  background: white;
+  color: #1f2937;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.faq-answer {
+  display: none;
+  padding: 18px 22px;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
 .quote-section {
   text-align: center;
-  background: #2563eb;
+  background: #0f172a;
   color: white;
 }
 
@@ -305,11 +412,38 @@ body {
   cursor: pointer;
 }
 
+#topBtn {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: #2563eb;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
 footer {
   text-align: center;
   padding: 30px;
-  background: #0f172a;
+  background: #020617;
   color: #cbd5e1;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(45px);
+  transition: 0.8s;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .dark-mode {
@@ -318,7 +452,7 @@ footer {
 }
 
 .dark-mode .navbar {
-  background: rgba(15, 23, 42, 0.9);
+  background: rgba(15,23,42,0.9);
 }
 
 .dark-mode .menu a {
@@ -327,6 +461,8 @@ footer {
 
 .dark-mode .about-box,
 .dark-mode .card,
+.dark-mode .stat-card,
+.dark-mode .faq-question,
 .dark-mode .contact-form input,
 .dark-mode .contact-form textarea {
   background: #111827;
@@ -334,28 +470,15 @@ footer {
 }
 
 .dark-mode .about-box p,
-.dark-mode .card p {
+.dark-mode .card p,
+.dark-mode .stat-card p,
+.dark-mode .faq-answer {
   color: #cbd5e1;
 }
 
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(45px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-18px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
 }
 
 @media (max-width: 900px) {
@@ -365,7 +488,7 @@ footer {
   }
 
   .hero h1 {
-    font-size: 48px;
+    font-size: 46px;
   }
 
   .hero-buttons {
@@ -373,7 +496,8 @@ footer {
     flex-wrap: wrap;
   }
 
-  .cards {
+  .cards,
+  .stats-section {
     grid-template-columns: 1fr;
   }
 
@@ -399,5 +523,13 @@ footer {
 
   .dark-mode .menu {
     background: #111827;
+  }
+
+  .featured-box {
+    padding: 35px;
+  }
+
+  .featured-box h3 {
+    font-size: 30px;
   }
 }

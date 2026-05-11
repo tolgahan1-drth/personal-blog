@@ -6,7 +6,9 @@
   <title>Yapici Tolgahan | Personal Blog</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <div id="progressBar"></div>
 
   <nav class="navbar">
     <div class="logo">Yapici Tolgahan</div>
@@ -18,12 +20,14 @@
       <li><a href="#about">About</a></li>
       <li><a href="#blog">Blog</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#featured">Featured</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><button id="darkModeBtn" class="dark-btn">🌙</button></li>
     </ul>
   </nav>
 
-  <section class="hero" id="home">
+  <section class="hero reveal" id="home">
     <div class="hero-content">
       <p class="small-text">HELLO, I'M</p>
       <h1>Yapici Tolgahan</h1>
@@ -46,13 +50,15 @@
     </div>
   </section>
 
-  <section class="section" id="about">
+  <section class="section reveal" id="about">
     <h2 class="section-title">About Me</h2>
+
     <div class="about-box">
       <p>
         I am Yapici Tolgahan. This website is my personal space where I share
         my thoughts, experiences, projects, and ideas.
       </p>
+
       <p>
         I believe in learning every day, improving step by step, and creating
         meaningful things. My blog is about personal growth, creativity,
@@ -61,7 +67,7 @@
     </div>
   </section>
 
-  <section class="section" id="blog">
+  <section class="section reveal" id="blog">
     <h2 class="section-title">Latest Blog Posts</h2>
 
     <div class="cards">
@@ -91,7 +97,7 @@
     </div>
   </section>
 
-  <section class="section" id="projects">
+  <section class="section reveal" id="projects">
     <h2 class="section-title">My Projects</h2>
 
     <div class="cards">
@@ -112,7 +118,59 @@
     </div>
   </section>
 
-  <section class="section skills">
+  <section class="section reveal featured-post" id="featured">
+    <h2 class="section-title">Featured Post</h2>
+
+    <div class="featured-box">
+      <span class="tag">Featured</span>
+      <h3>The Power of Starting Small</h3>
+      <p>
+        Big dreams do not begin with perfect plans. They begin with one small
+        step, repeated with patience and belief.
+      </p>
+      <a href="#">Read Featured Post →</a>
+    </div>
+  </section>
+
+  <section class="section reveal stats-section">
+    <div class="stat-card">
+      <h3 class="counter" data-target="12">0</h3>
+      <p>Blog Ideas</p>
+    </div>
+
+    <div class="stat-card">
+      <h3 class="counter" data-target="5">0</h3>
+      <p>Projects</p>
+    </div>
+
+    <div class="stat-card">
+      <h3 class="counter" data-target="100">0</h3>
+      <p>Daily Motivation</p>
+    </div>
+  </section>
+
+  <section class="section reveal testimonials">
+    <h2 class="section-title">What People Say</h2>
+
+    <div class="cards">
+      <div class="card">
+        <p>“A clean, inspiring, and personal website.”</p>
+        <h3>Visitor</h3>
+      </div>
+
+      <div class="card">
+        <p>“The blog feels modern and motivating.”</p>
+        <h3>Reader</h3>
+      </div>
+
+      <div class="card">
+        <p>“Simple, creative, and professional.”</p>
+        <h3>Friend</h3>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal skills">
     <h2 class="section-title">My Interests</h2>
 
     <div class="skill">
@@ -136,11 +194,36 @@
     </div>
   </section>
 
-  <section class="section quote-section">
+  <section class="section reveal faq-section" id="faq">
+    <h2 class="section-title">FAQ</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">What is this blog about?</button>
+      <p class="faq-answer">
+        This blog is about personal growth, creativity, technology, ideas, and life.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Who is Yapici Tolgahan?</button>
+      <p class="faq-answer">
+        Yapici Tolgahan is the creator of this personal blog and digital space.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Can I contact you?</button>
+      <p class="faq-answer">
+        Yes, you can use the contact section to send a message.
+      </p>
+    </div>
+  </section>
+
+  <section class="section reveal quote-section">
     <h2>“Every day is a chance to become better.”</h2>
   </section>
 
-  <section class="section" id="contact">
+  <section class="section reveal" id="contact">
     <h2 class="section-title">Contact Me</h2>
 
     <form class="contact-form">
@@ -150,6 +233,8 @@
       <button type="button">Send Message</button>
     </form>
   </section>
+
+  <button id="topBtn">↑</button>
 
   <footer>
     <p>© 2026 Yapici Tolgahan. All rights reserved.</p>
