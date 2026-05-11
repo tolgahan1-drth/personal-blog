@@ -101,3 +101,122 @@ window.addEventListener("scroll", () => {
 revealElements();
 updateProgressBar();
 checkCounters();
+const chatbotToggle =
+  document.getElementById("chatbotToggle");
+
+const chatbotBox =
+  document.getElementById("chatbotBox");
+
+const chatbotClose =
+  document.getElementById("chatbotClose");
+
+const sendMessage =
+  document.getElementById("sendMessage");
+
+const chatInput =
+  document.getElementById("chatInput");
+
+const chatbotMessages =
+  document.getElementById("chatbotMessages");
+
+chatbotToggle.addEventListener(
+  "click",
+  () => {
+    chatbotBox.classList.toggle("active");
+  }
+);
+
+chatbotClose.addEventListener(
+  "click",
+  () => {
+    chatbotBox.classList.remove("active");
+  }
+);
+
+function addMessage(text, type) {
+
+  const message =
+    document.createElement("div");
+
+  message.className =
+    type === "user"
+      ? "user-message"
+      : "bot-message";
+
+  message.textContent = text;
+
+  chatbotMessages.appendChild(message);
+
+  chatbotMessages.scrollTop =
+    chatbotMessages.scrollHeight;
+}
+
+async function handleChat() {
+
+  const message =
+    chatInput.value.trim();
+
+  if (message === "") return;
+
+  addMessage(message, "user");
+
+  chatInput.value = "";
+
+  addMessage("Thinking...", "bot");
+
+  try {
+
+    const response = await fetch(
+      "/api/chat",
+      {
+        method: "POST",
+
+        headers: {
+          "Content-Type":
+            "application/json"
+        },
+
+        body: JSON.stringify({
+          message
+        })
+      }
+    );
+
+    const data =
+      await response.json();
+
+    chatbotMessages.lastChild.remove();
+
+    addMessage(
+      data.reply ||
+      "No response received.",
+      "bot"
+    );
+
+  } catch {
+
+    chatbotMessages.lastChild.remove();
+
+    addMessage(
+      "Connection error.",
+      "bot"
+    );
+
+  }
+}
+
+sendMessage.addEventListener(
+  "click",
+  handleChat
+);
+
+chatInput.addEventListener(
+  "keydown",
+  event => {
+
+    if (event.key === "Enter") {
+      handleChat();
+    }
+
+  }
+);
